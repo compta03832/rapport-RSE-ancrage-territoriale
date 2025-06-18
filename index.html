@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport RSE - Analyse de l'Ancrage Territorial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js et le plugin pour les étiquettes de données -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-100">
+
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- En-tête -->
+        <header class="bg-white p-8 rounded-xl shadow-md mb-8">
+            <div class="flex items-center justify-center mb-4">
+                <i data-lucide="map-pin" class="h-10 w-10 text-teal-600 mr-4"></i>
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 text-center">Analyse de l'Ancrage Territorial</h1>
+            </div>
+            <p class="text-center text-xl text-gray-600">Performance et Engagement Local 2022-2024</p>
+        </header>
+
+        <!-- Section 1: Le Contexte Marché -->
+        <div class="bg-white p-6 rounded-xl shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Le Contexte : Un Marché sous Tension</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-center">Évolution du CA vs Achats Bâti</h3>
+                    <div class="relative h-80">
+                        <canvas id="contexteChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-center">Part des Achats Bâti dans le Total (%)</h3>
+                    <div class="relative h-80">
+                        <canvas id="partBatiChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 mt-6 italic">
+                <strong>Analyse :</strong> Depuis 2022, l'entreprise fait face à une baisse de son chiffre d'affaires global. Cette tendance est exacerbée sur le segment "Bâti", où la chute des volumes d'achats est particulièrement significative, reflétant la crise sectorielle.
+            </p>
+        </div>
+
+        <!-- Section 2: La Conséquence sur l'Ancrage Territorial -->
+        <div class="bg-white p-6 rounded-xl shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">La Double Conséquence sur notre Ancrage Local</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-center">Préférence d'Achat Locale en Valeur (%)</h3>
+                    <div class="relative h-80">
+                        <canvas id="preferenceLocaleChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-2">Part des achats locaux dans le total des achats hors centrale.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 text-center">Part des Fournisseurs Locaux en Nombre (%)</h3>
+                    <div class="relative h-80">
+                        <canvas id="fournisseursLocauxChart"></canvas>
+                    </div>
+                    <p class="text-center text-sm text-gray-500 mt-2">Part des fournisseurs locaux dans le total des fournisseurs hors centrale.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Analyse Stratégique & Plan d'Action -->
+        <div class="bg-white p-6 rounded-xl shadow-md">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Analyse Stratégique & Plan d'Action 2025</h2>
+            <div class="space-y-6">
+                <div class="flex items-start p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                    <i data-lucide="link-2" class="h-6 w-6 text-blue-700 mr-4 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h5 class="font-bold text-blue-800">La Cause Racine : Un Effet de Levier Sectoriel</h5>
+                        <p class="text-gray-700">Notre analyse montre que la baisse de notre **part de fournisseurs locaux** (de 61,5% à 43,8%) est une conséquence directe de la chute de l'activité Bâti. Ce secteur, historiquement très dépendant de petits fournisseurs locaux spécialisés, a vu ses besoins diminuer, impactant mécaniquement notre écosystème de partenaires de proximité.</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                    <i data-lucide="shield-check" class="h-6 w-6 text-green-700 mr-4 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h5 class="font-bold text-green-800">La Preuve de notre Engagement : une Préférence Locale Inébranlable</h5>
+                        <p class="text-gray-700">Le graphique le plus révélateur de notre politique RSE est celui de la **préférence d'achat en valeur**. Avec un taux qui reste exceptionnellement élevé (entre 81% et 94%), il prouve que lorsque nous effectuons des achats hors de notre centrale, **notre choix se porte massivement sur les acteurs locaux**. Notre volonté stratégique est intacte, c'est le volume du marché qui s'est contracté.</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-4 bg-teal-50 rounded-lg border-l-4 border-teal-500">
+                    <i data-lucide="search-check" class="h-6 w-6 text-teal-700 mr-4 mt-1 flex-shrink-0"></i>
+                    <div>
+                        <h5 class="font-bold text-teal-800">Le Futur : Compenser et Renforcer notre Maillage Local</h5>
+                        <p class="text-gray-700">Conscients de l'érosion de notre base de fournisseurs locaux due à la conjoncture, notre objectif RSE pour 2025 est de **passer d'une politique locale réactive à une stratégie proactive de sourcing.**<br>
+                        <strong>Action d'amélioration :</strong> Lancer une mission de sourcing dédiée pour **identifier et intégrer de nouveaux fournisseurs locaux** dans des familles d'achats plus dynamiques ou jusqu'ici non explorées (services, fournitures, maintenance, etc.). L'objectif est de compenser la perte liée au Bâti, de renforcer notre résilience et de réaffirmer notre rôle d'acteur économique majeur du territoire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        Chart.register(ChartDataLabels);
+        
+        const years = ['2022', '2023', '2024'];
+        const data = {
+            caTotal: [2918194, 2794575, 2393464], // CORRECTION sur le CA 2022
+            achatsTotal: [1668146, 1521943, 1273643],
+            achatsBati: [424051, 349025, 295445],
+            partAchatsLocauxValeur: [94.3, 81.7, 84.4],
+            partFournisseursLocaux: [61.5, 55.6, 43.8],
+        };
+
+        const partAchatsBati = data.achatsBati.map((val, i) => (val / data.achatsTotal[i] * 100));
+        const caTotalVariations = [null, ((data.caTotal[1] - data.caTotal[0]) / data.caTotal[0] * 100), ((data.caTotal[2] - data.caTotal[1]) / data.caTotal[1] * 100)];
+        const achatsBatiVariations = [null, ((data.achatsBati[1] - data.achatsBati[0]) / data.achatsBati[0] * 100), ((data.achatsBati[2] - data.achatsBati[1]) / data.achatsBati[1] * 100)];
+
+        function createChart(canvasId, type, labels, datasets, extraOptions = {}) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            new Chart(ctx, {
+                type: type,
+                data: { labels, datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: { mode: 'index', intersect: false },
+                        ...extraOptions.plugins,
+                    },
+                    scales: {
+                        y: { 
+                            beginAtZero: true,
+                            ticks: { callback: (value) => value.toLocaleString('fr-FR') + (extraOptions.yUnit || '') }
+                        }
+                    },
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            createChart('contexteChart', 'line', years, [
+                { 
+                    label: 'CA Total (€)', data: data.caTotal, borderColor: '#4a5568', backgroundColor: '#4a556820', tension: 0.1,
+                    datalabels: { align: 'top', color: '#2d3748', formatter: (v, c) => { const var_ = caTotalVariations[c.dataIndex]; return var_ ? `${var_.toFixed(1)}%` : ''; } }
+                },
+                { 
+                    label: 'Achats Bâti (€)', data: data.achatsBati, borderColor: '#c05621', backgroundColor: '#c0562120', tension: 0.1,
+                    datalabels: { align: 'bottom', color: '#9c4221', formatter: (v, c) => { const var_ = achatsBatiVariations[c.dataIndex]; return var_ ? `${var_.toFixed(1)}%` : ''; } }
+                }
+            ], { 
+                yUnit: ' €',
+                plugins: { datalabels: { backgroundColor: (c) => c.dataset.backgroundColor, borderRadius: 4, font: { weight: 'bold' }, padding: 6 } }
+            });
+            
+            createChart('partBatiChart', 'bar', years, [
+                { label: 'Part des Achats Bâti (%)', data: partAchatsBati, backgroundColor: '#dd6b20' }
+            ], { 
+                yUnit: ' %', 
+                plugins: { 
+                    legend: { display: false },
+                    datalabels: { color: 'white', font: { weight: 'bold' }, formatter: (v) => v.toFixed(1) + '%' }
+                } 
+            });
+
+            createChart('preferenceLocaleChart', 'bar', years, [
+                { label: 'Préférence d\'achat locale en valeur (%)', data: data.partAchatsLocauxValeur, backgroundColor: '#2c7a7b' }
+            ], { 
+                yUnit: ' %', 
+                plugins: { 
+                    legend: { display: false },
+                    datalabels: { color: 'white', font: { weight: 'bold' }, formatter: (v) => v.toFixed(1) + '%' }
+                } 
+            });
+
+            createChart('fournisseursLocauxChart', 'bar', years, [
+                { label: 'Part des fournisseurs locaux en nombre (%)', data: data.partFournisseursLocaux, backgroundColor: '#285e61' }
+            ], { 
+                yUnit: ' %', 
+                plugins: { 
+                    legend: { display: false },
+                    datalabels: { color: 'white', font: { weight: 'bold' }, formatter: (v) => v.toFixed(1) + '%' }
+                } 
+            });
+        });
+    </script>
+</body>
+</html>
