@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapport RSE - Analyse de l'Ancrage Territorial</title>
+    <title>Rapport RSE - Analyse de l'Ancrage Territorial (Mis à jour)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js et le plugin pour les étiquettes de données -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -73,14 +73,14 @@
                     <i data-lucide="link-2" class="h-6 w-6 text-blue-700 mr-4 mt-1 flex-shrink-0"></i>
                     <div>
                         <h5 class="font-bold text-blue-800">La Cause Racine : Un Effet de Levier Sectoriel</h5>
-                        <p class="text-gray-700">Notre analyse montre que la baisse de notre **part de fournisseurs locaux** (de 61,5% à 43,8%) est une conséquence directe de la chute de l'activité Bâti. Ce secteur, historiquement très dépendant de petits fournisseurs locaux spécialisés, a vu ses besoins diminuer, impactant mécaniquement notre écosystème de partenaires de proximité.</p>
+                        <p class="text-gray-700">Notre analyse montre que la baisse de notre **part de fournisseurs locaux** (de 61,5% à 50,0%) est une conséquence directe de la chute de l'activité Bâti. Ce secteur, historiquement très dépendant de petits fournisseurs locaux spécialisés, a vu ses besoins diminuer, impactant mécaniquement notre écosystème de partenaires de proximité.</p>
                     </div>
                 </div>
                 <div class="flex items-start p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
                     <i data-lucide="shield-check" class="h-6 w-6 text-green-700 mr-4 mt-1 flex-shrink-0"></i>
                     <div>
-                        <h5 class="font-bold text-green-800">La Preuve de notre Engagement : une Préférence Locale Inébranlable</h5>
-                        <p class="text-gray-700">Le graphique le plus révélateur de notre politique RSE est celui de la **préférence d'achat en valeur**. Avec un taux qui reste exceptionnellement élevé (entre 81% et 94%), il prouve que lorsque nous effectuons des achats hors de notre centrale, **notre choix se porte massivement sur les acteurs locaux**. Notre volonté stratégique est intacte, c'est le volume du marché qui s'est contracté.</p>
+                        <h5 class="font-bold text-green-800">La Preuve de notre Engagement : une Préférence Locale Renforcée</h5>
+                        <p class="text-gray-700">Le graphique le plus révélateur de notre politique RSE est celui de la **préférence d'achat en valeur**. Avec un taux qui reste exceptionnellement élevé et qui montre même une **nette amélioration en 2024 (passant de 84,3% à 89,5%)**, il prouve que lorsque nous effectuons des achats hors de notre centrale, notre choix se porte massivement sur les acteurs locaux. Notre volonté stratégique est intacte et se renforce, malgré une conjoncture de marché difficile.</p>
                     </div>
                 </div>
                 <div class="flex items-start p-4 bg-teal-50 rounded-lg border-l-4 border-teal-500">
@@ -100,13 +100,16 @@
         Chart.register(ChartDataLabels);
         
         const years = ['2022', '2023', '2024'];
+        
+        // --- NOUVELLES DONNÉES INTÉGRÉES ICI ---
         const data = {
-            caTotal: [2918194, 2794575, 2393464], // CORRECTION sur le CA 2022
+            caTotal: [2918194, 2794575, 2393464],
             achatsTotal: [1668146, 1521943, 1273643],
             achatsBati: [424051, 349025, 295445],
-            partAchatsLocauxValeur: [94.3, 81.7, 84.4],
-            partFournisseursLocaux: [61.5, 55.6, 43.8],
+            partAchatsLocauxValeur: [94.3, 84.3, 89.5], // Donnée mise à jour
+            partFournisseursLocaux: [61.5, 59.3, 50.0], // Donnée mise à jour
         };
+        // --- FIN DES NOUVELLES DONNÉES ---
 
         const partAchatsBati = data.achatsBati.map((val, i) => (val / data.achatsTotal[i] * 100));
         const caTotalVariations = [null, ((data.caTotal[1] - data.caTotal[0]) / data.caTotal[0] * 100), ((data.caTotal[2] - data.caTotal[1]) / data.caTotal[1] * 100)];
